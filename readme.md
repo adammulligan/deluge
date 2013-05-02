@@ -17,7 +17,7 @@ Template](wcmc.io/87ab).
 [http://visionmedia.github.com/mocha/](http://visionmedia.github.com/mocha/) 
 is used for testing, and can be run with:
 
-    cake dev
+    cake test
 
 ## License
 
