@@ -27,11 +27,4 @@ app.use express.bodyParser()
 routes = require './routes'
 routes(app)
 
-io = require('socket.io').listen(server)
-
-io.sockets.on 'connection', (socket) ->
-  socket.on 'anEvent', (data) ->
-    console.log 'EVENT'
-    console.log data
-
 module.exports = server
