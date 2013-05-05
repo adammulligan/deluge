@@ -1,3 +1,8 @@
 [
-
+  "models/torrent",
+  "collections/torrent_collection",
+  "templates/torrent_list",
+  "views/torrent_list_view",
+  "templates/torrent_item",
+  "views/torrent_item_view"
 ]

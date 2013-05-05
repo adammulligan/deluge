@@ -1,0 +1,7 @@
+<h1>TorrentList</h1>
+
+<ul>
+  {{#each torrents}}
+    {{subView "TorrentItemView" torrent=this}}
+  {{/each}}
+</ul>
