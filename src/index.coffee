@@ -27,4 +27,24 @@ app.use express.bodyParser()
 routes = require './routes'
 routes(app)
 
+io = require('socket.io').listen(server)
+
+Rtorrent = require('./lib/rtorrent')
+rtorrent = new Rtorrent(config.RTORRENT_HOST, config.RTORRENT_PATH, config.RTORRENT_PORT)
+
+room = 'rtorrent'
+setInterval ->
+  if io.sockets.clients(room).length > 0
+    rtorrent.torrents(
+      (torrents) ->
+        io.sockets.in(room).emit('torrents', torrents)
+    , (error) ->
+      console.log(error)
+    )
+, 5000
+
+io.sockets.on 'connection', (socket) ->
+  socket.on('subscribe', (data) -> socket.join(room) )
+  socket.on('unsubscribe', (data) -> socket.leave(room); )
+
 module.exports = server
