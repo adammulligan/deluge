@@ -29,11 +29,15 @@ body
   div.container
     block content
 
-  != js('//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.min.js')
+  != js('jquery/jquery.min.js')
+  != js('underscore/underscore-min.js')
+  != js('backbone/backbone-min.js')
+  != js('handlebars/handlebars.js')
+
   != js('//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js')
   script(src='/socket.io/socket.io.js')
-  != js('underscore-min')
   != js('dropzone')
+
   != js('app')
 
 | </html>
