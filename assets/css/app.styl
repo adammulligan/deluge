@@ -3,9 +3,21 @@
 body
   margin-top 60px
 
-table#torrents
-  table-layout:fixed;
+table
+  color gray
+  table-layout fixed
+
+  tr.active
+    color black
+
+  th:first-child
+    width 370px
 
   td:first-child
-    width: 350px;
-    word-wrap: break-word;
+    overflow: hidden;
+    white-space: nowrap;
+
+    span
+      display block;
+      font-size 0.7em;
+      color gray;

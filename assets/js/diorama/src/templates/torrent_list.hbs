@@ -1,7 +1,18 @@
-<h1>TorrentList</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Up Rate</th>
+      <th>Upload Total</th>
+      <th>Ratio</th>
+      <th>Down Rate</th>
+      <th>Size</th>
+      <th>Downloaded</th>
+      <th>%</th>
+    </tr>
+  </thead>
 
-<ul>
   {{#each torrents}}
     {{subView "TorrentItemView" torrent=this}}
   {{/each}}
-</ul>
+</table>

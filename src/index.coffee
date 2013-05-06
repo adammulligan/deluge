@@ -41,7 +41,7 @@ setInterval ->
     , (error) ->
       console.log(error)
     )
-, 5000
+, 1000
 
 io.sockets.on 'connection', (socket) ->
   socket.on('subscribe', (data) -> socket.join(room) )

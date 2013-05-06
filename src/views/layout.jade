@@ -13,6 +13,20 @@ head
   != css("//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap.min.css")
   != css('app')
 
+  != js('jquery/jquery.min.js')
+  != js('underscore/underscore-min.js')
+  != js('backbone/backbone-min.js')
+  != js('handlebars/handlebars.js')
+
+  != js('diorama/diorama.js')
+  != js('diorama/js/application.js')
+
+  != js('//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js')
+  script(src='/socket.io/socket.io.js')
+  != js('dropzone')
+
+  != js('app')
+
 body
   div.navbar.navbar-fixed-top
     div.navbar-inner
@@ -28,19 +42,5 @@ body
 
   div.container
     block content
-
-  != js('jquery/jquery.min.js')
-  != js('underscore/underscore-min.js')
-  != js('backbone/backbone-min.js')
-  != js('handlebars/handlebars.js')
-
-  != js('diorama/diorama.js')
-  != js('diorama/js/application.js')
-
-  != js('//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js')
-  script(src='/socket.io/socket.io.js')
-  != js('dropzone')
-
-  != js('app')
 
 | </html>
