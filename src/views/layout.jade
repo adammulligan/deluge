@@ -12,6 +12,7 @@ head
 
   != css("//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap.min.css")
   != css('app')
+  != css('dropzone')
 
   != js('jquery/jquery.min.js')
   != js('underscore/underscore-min.js')
@@ -35,7 +36,7 @@ body
           span.icon-bar
         a(href='#').brand Deluge
         ul.nav
-          - var obj = { 'home':'Home', 'about':'About' }
+          - var obj = { '/':'Home', 'list':'Current Downloads' }
             - each val, key in obj
                 li
                   a(href='#{key}') #{val}

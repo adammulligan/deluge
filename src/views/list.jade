@@ -1,0 +1,8 @@
+extends layout
+
+block content
+  script
+    $(document).ready(function() {
+      var torrents_view = new Backbone.Views.TorrentListView({torrents: !{torrents}})
+      $('.container:last').append(torrents_view.render().el)
+    });

@@ -28,6 +28,7 @@ routes = require './routes'
 routes(app)
 
 io = require('socket.io').listen(server)
+io.set 'log level', 1
 
 Rtorrent = require('./lib/rtorrent')
 rtorrent = new Rtorrent(config.RTORRENT_HOST, config.RTORRENT_PATH, config.RTORRENT_PORT)

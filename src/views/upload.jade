@@ -1,3 +1,25 @@
 extends layout
 block content
-  form(action="/upload").dropzone
+  script
+    $(document).ready(function() {
+      new Dropzone('body', {
+        url: "/upload",
+        previewsContainer: "#previews",
+        clickable: "#clickable",
+        acceptedMimeTypes: 'application/x-bittorrent'
+      });
+    });
+
+
+  - if (typeof(flash) !== 'undefined'){
+    #flash !{flash}
+  -}
+
+  #previews.dropzone-previews
+
+  button#clickable Choose files
+
+  p
+    form(action="/upload", method="post")
+      input(type="text", id="url", name="url")
+      input(type="submit")
