@@ -6,6 +6,20 @@ http = require 'http'
 url  = require 'url'
 path = require 'path'
 
+copyFileSync = (srcFile, destFile) ->
+  BUF_LENGTH = 64*1024
+  buff = new Buffer(BUF_LENGTH)
+  fdr = fs.openSync(srcFile, 'r')
+  fdw = fs.openSync(destFile, 'w')
+  bytesRead = 1
+  pos = 0
+  while bytesRead > 0
+    bytesRead = fs.readSync(fdr, buff, 0, BUF_LENGTH, pos)
+    fs.writeSync(fdw,buff,0,bytesRead)
+    pos += bytesRead
+  fs.closeSync(fdr)
+  fs.closeSync(fdw)
+
 handleUpload = (req, res) ->
   if !_.isEmpty(req.body["url"])
     file_url = url.parse(req.body["url"])
@@ -33,7 +47,7 @@ handleUpload = (req, res) ->
       new_path = "#{config.UPLOAD_PATH}/#{upload.filename}"
 
       unless fs.existsSync(new_path)
-        fs.renameSync(upload.path, new_path)
+        copyFileSync(upload.path, new_path)
 
       res.send {message: "Uploaded successfully"}
       res.statusCode = 201
