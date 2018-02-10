@@ -14,7 +14,7 @@ Template](wcmc.io/87ab).
 
 ## Testing
 
-[http://visionmedia.github.com/mocha/](http://visionmedia.github.com/mocha/) 
+[http://mochajs.org/](http://mochajs.org/) 
 is used for testing, and can be run with:
 
     cake test
